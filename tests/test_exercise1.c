@@ -58,6 +58,8 @@ int main()
     assert(fabs(result8 - sin(0.1)) < EPSILON && "Test 8 failed: sin(0.1) should be ≈ 0.0998");
     printf("Test 8 passed: sin(0.1) ≈ 0.0998\n");
 
-    printf("\nAll Exercise 1 tests passed!\n");
+    printf("\nAll Exercise 1 tests passed!\n Men der kommer flere");
+    
+
     return 0;
 }
