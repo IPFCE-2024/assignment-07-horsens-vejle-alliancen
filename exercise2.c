@@ -14,13 +14,18 @@
  * - print: Print all items in the stack
  */
 
-#include "stack.h"
+#include <stdio.h>
+#include <stdbool.h>
+#include <assert.h>
+#include "include/stack.h"
 
 /* Create an empty stack */
 void initialize(stack *s)
 {
     /* pre-condition: true */
     /* post-condition: stack is empty */
+    s->head = NULL;
+
 }
 
 /* Insert item x at the top of stack s */
@@ -28,6 +33,10 @@ void push(int x, stack *s)
 {
     /* pre-condition: true (linked list can always accept more items) */
     /* post-condition: x is added to top of stack */
+    node* newNode = malloc(sizeof(node));
+    newNode->data=x;
+    newNode->next = s->head;
+    s->head = newNode;
 
 }
 
@@ -36,8 +45,12 @@ int pop(stack *s)
 {
   /* pre-condition: stack must not be empty */
   /* post-condition: top item is removed and returned */
+    int popped;
 
-  return 0; // placeholder - replace with actual implementation
+    popped = s->head->data;
+    s->head = s->head->next;
+
+  return popped; // placeholder - replace with actual implementation
 }
 
 /* Test whether a stack can accept more pushes */
@@ -45,6 +58,8 @@ bool full(stack *s)
 {
     /* pre-condition: true */
     /* post-condition: Returns true if stack is full, false otherwise */
+    s->head == NULL;
+
     return false;
 }
 
@@ -53,8 +68,7 @@ bool empty(stack *s)
 {
     /* pre-condition: true */
     /* post-condition: returns true if stack is empty, false otherwise */
-
-    return false; // placeholder - replace with actual implementation
+    return (s->head == NULL); // placeholder - replace with actual implementation
 }
 
 /* Print the contents of the stack */
@@ -63,3 +77,4 @@ void print(stack *s)
     /* pre-condition: true */
     /* post-condition: prints all items in the stack */
 }
+    

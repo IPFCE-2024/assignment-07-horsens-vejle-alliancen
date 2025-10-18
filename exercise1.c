@@ -69,3 +69,6 @@ double taylor_sine(double x, int n) {
     printf("%lf Jeg er glad for min cykel", sin);
     return sin; // placeholder - replace with your implementation
 }
+
+
+//Vores egne test ligger i tests/test.c
